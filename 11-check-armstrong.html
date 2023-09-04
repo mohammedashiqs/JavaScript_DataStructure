@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #myForm {
+            margin: auto;
+            width: 50%;
+            border: 4px solid green;
+            padding: 10px;
+        }
+
+        #myForm .form-group {
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Program to check Armstrong or not</h1>
+    </center>
+
+    <form onsubmit="checkArmstrong(event)" id="myForm">
+        <div class="form-group">
+            <label for="">Enter a number</label>
+            <input type="number" id="num" required>
+        </div>
+        <div class="form-group">
+            <input type="submit">
+        </div>
+    </form>
+
+    <center>
+        <div id="result"></div>
+    </center>
+
+    <!-- <script>
+        function checkArmstrong(e) {
+            e.preventDefault();
+            let numStr = (document.getElementById("num").value).toString()
+
+            let numLength = numStr.length;
+            let sum = 0;
+
+            for (let digit of numStr) {
+                sum += Math.pow(parseInt(digit), numLength);
+            }
+
+            if (sum == numStr) {
+                document.getElementById("result").innerText = "Armstrong Number"
+            } else {
+                document.getElementById("result").innerText = "Not a Armstrong Number"
+            }
+        }
+    </script> -->
+
+    <script>
+        function checkArmstrong(e) {
+            e.preventDefault();
+            let num = document.getElementById("num").value;
+            numStr = num.toString()
+            let numLength = numStr.length;
+            let digit = 0;
+            let digitSum = 0;
+            for (i = 0; i < numLength; i++) {
+                let temp = Number(numStr.charAt(i));
+                digitSum = digitSum + (temp) ** numLength;
+
+            }
+            digitSum = digitSum.toString()
+            if (numStr == digitSum) {
+                document.getElementById("result").innerText = "Armstrong Number"
+            } else {
+                document.getElementById("result").innerText = "Not a Armstrong Number"
+            }
+            console.log(numStr, digitSum);
+        }
+    </script>
+</body>
+
+</html>

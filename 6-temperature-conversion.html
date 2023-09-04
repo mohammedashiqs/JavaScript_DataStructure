@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myForm {
+            border: 4px solid orange;
+            width: 50%;
+            margin: auto;
+            padding: 10px;
+        }
+        #myForm .form-group{
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Program to convert temperature from Fahrenheit to Celsius and Celsius to Fahrenheit</h1>
+    </center>
+
+    <form onsubmit="tempConvert(event)" name="myForm" id="myForm">
+        <div class="form-group">
+            <select name="" id="dropDown">
+                <option value="fahToCel">Fahrenaheit to Celsius</option>
+                <option value="celToFah">Celsius To Fahrenheit</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Enter a Temperature: </label>
+            <input type="text" id="temp" required>
+        </div>
+        <div class="form-group">
+            <input type="submit">
+        </div>
+    </form>
+    <center>
+        <div id="result"></div>
+    </center>
+
+    <script>
+        function tempConvert(e) {
+            e.preventDefault();
+
+            let ans;
+            let temp = document.myForm.temp.value;
+            let dropDown = document.getElementById("dropDown").value
+
+
+            if (dropDown == "celToFah") {
+                ans = (temp * 9 / 5) + 32;
+                document.getElementById("ans").innerText = `Fahrenheit: ${ans}`;
+
+            } else if (dropDown == "fahToCel") {
+                ans = (temp - 32) * 9 / 5
+                document.getElementById("ans").innerText = `Celsius: ${ans}`;
+            }
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #myForm{
+            margin: auto;
+            width: 50%;
+            border: 4px solid green;
+            padding: 10px;
+        }
+
+        #myForm .form-group{
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Programme to check whether a character is an alphabet or not</h1>
+    </center>
+
+    <form onsubmit="checkChar(event)" id="myForm">
+        <div class="form-group">
+            <label for="">Enter a character</label>
+            <input type="text" id="char" required>
+        </div>
+        <div class="form-group">
+            <input type="submit">
+        </div>
+    </form>
+    <center>
+        <div id="result"></div>
+    </center>
+
+    <script>
+        function checkChar(e) {
+            e.preventDefault();
+            let char = document.getElementById("char").value;
+            if (/^[a-zA-Z]$/.test(char)) {
+                document.getElementById("result").innerText = `Character`
+            } else {
+                document.getElementById("result").innerText = `Not a Character`
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

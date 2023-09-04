@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #myForm{
+            border: 4px solid pink;
+            width: 50%;
+            margin: auto;
+            padding: 10px;
+        }
+
+        #myForm .form-group{
+            margin: 8px;
+        }
+    </style>
+
+</head>
+<body>
+    <center>
+        <h1>Check whether a number is even or odd</h1>
+    </center>
+
+    <form onsubmit="evenOrOdd(event)" name="myForm" id="myForm">
+        <div class="form-group">
+            <label for="">Enter a number</label>
+            <input type="number" name="" id="num" required>
+            
+        </div>
+        <div class="form-group">
+            <input type="submit">
+        </div>
+    </form>
+    <center>
+        <div id="result"></div>
+    </center>
+
+    <script>
+        function evenOrOdd(e) {
+            e.preventDefault();
+            let num = document.myForm.num.value;
+            num = Number(num)
+            console.log(num);
+            if(num%2==0){
+                document.getElementById("result").innerText = "Even"
+            }else{
+                document.getElementById("result").innerText = "Odd"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #myForm{
+            margin: auto;
+            width: 50%;
+            border: 4px solid green;
+            padding: 10px;
+        }
+
+        #myForm .form-group{
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Program to check vowel or consonants</h1>
+    </center>
+
+    <form onsubmit="checkAlph(event)" name="myForm" id="myForm">
+        <div class="form-group">
+            <label for="">Enter a Alphabet</label>
+            <input type="text" name="" id="alph">
+        </div>
+        <div class="form-group">
+            <input type="submit">
+        </div>
+    </form>
+    <center>
+        <div id="result"></div>
+    </center>
+    <!--  <script>
+        function checkAlph(e) {
+            e.preventDefault();
+            let alph = document.myForm.alph.value
+
+            if (/^[a-zA-Z]$/.test(alph)) {
+                if (alph == "a" || alph == "A" ||
+                    alph == "e" || alph == "E" ||
+                    alph == "i" || alph == "I" ||
+                    alph == "o" || alph == "O" ||
+                    alph == "u" || alph == "U"
+
+                ) {
+                    document.getElementById("result").innerText = "Vowels"
+                } else {
+                    document.getElementById("result").innerText = "Consonants"
+                }
+            }else{
+                alert("Enter Alphabet!")
+            }
+        }
+    </script> -->
+
+                                             <!-- ----------------------using ASCII CODE--------------------------------------- -->
+    <script>
+        function checkAlph(e) {
+            e.preventDefault();
+            let alph = document.myForm.alph.value
+
+            if (/^[a-zA-Z]$/.test(alph)) {
+                let charCode = alph.charCodeAt(0)
+
+                if(charCode == 65 || charCode == 97 ||
+                charCode == 69 || charCode == 101 ||
+                charCode == 73 || charCode == 105 ||
+                charCode == 79 || charCode == 111 ||
+                charCode == 85 || charCode == 117
+                ){
+                    document.getElementById("result").innerText = "Vowel"
+                }else{
+                    document.getElementById("result").innerText = "consonant"
+                }
+
+            }else{
+                alert("Enter Alphabet!")
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

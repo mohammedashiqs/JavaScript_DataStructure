@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Find largest number from 2 numbers -->
+    <center>
+        <h1>Find largest number from 2 numbers</h1>
+    </center>
+
+    <form>
+        <input type="number" name="" id="firstNum" placeholder="Enter first number" required><br><br>
+        <input type="number" name="" id="secondNum" placeholder="Enter second number" required><br><br>
+        <button type="button" onclick="findLargeNum1()">Execute the code</button>
+    </form>
+
+    <h1 id="largestNum1"></h1>
+
+
+
+    <script>
+        function findLargeNum1() {
+
+            let a = document.getElementById("firstNum").value
+            let b = document.getElementById("secondNum").value
+            let ans1;
+            if (a && b) {
+
+                if (a > b) {
+                    ans1 = a
+                } else if (b > a) {
+                    ans1 = b
+                }
+
+                if (a == b) {
+                    document.getElementById("largestNum").innerText = "Both are same"
+                } else {
+                    document.getElementById("largestNum").innerText = `Largest Number is: ${ans1}`
+                }
+
+            } else {
+                alert("Please enter all the numbers")
+            }
+        }
+        document.write('<hr>')
+    </script>
+
+    <!-- find the largest number from 3 numbers -->
+    <center>
+        <h1>Find the largest number from 3 numbers</h1>
+    </center>
+
+    <form>
+        <input type="number" id="n1" placeholder="Enter first number"><br><br>
+        <input type="number" id="n2" placeholder="Enter second number"><br><br>
+        <input type="number" id="n3" placeholder="Enter third number"><br><br>
+        <button type="button" onclick="findLargeNum2()">Execute the code</button>
+    </form>
+
+    <h1 id="ans2"></h1>
+
+    <script>
+
+        function findLargeNum2() {
+
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+            let n3 = document.getElementById("n3").value;
+
+            if (n1) {
+                if (n2) {
+                    if (n3) {
+                        n1 = Number(n1)
+                        n2 = Number(n2)
+                        n3 = Number(n3)
+                        let ans2;
+
+                        console.log(typeof (n1), n2, n3)
+
+
+                        result = (n1 > n2) ? n1 : n2;
+                        ans2 = (result > n3) ? result : n3
+                        document.getElementById("ans2").innerText = ans2;
+                    } else {
+                        alert("Enter the third number")
+                    }
+                } else {
+                    alert("Enter the second number")
+                }
+
+            } else {
+                alert("Enter the first number")
+            }
+
+
+        }
+
+
+    </script>
+
+
+    <!-- find the sign value -->
+    <center>
+        <h1>Find the sign value of the number</h1>
+    </center>
+
+    <form>
+        <input type="number" id="num" placeholder="Enter a Number"><br><br>
+        <button type="button" onclick="checkSign()">Execute the code</button>
+    </form>
+
+    <h1 id="signNum"></h1>
+
+    <script>
+        function checkSign() {
+            let num = document.getElementById("num").value;
+
+            if (num > 0 || num < 0 || num == 0) {
+                num = Number(num)
+                console.log(num)
+
+                if (num > 0) {
+                    document.getElementById("signNum").innerHTML = "Positive";
+                } else if (num < 0) {
+                    document.getElementById("signNum").innerText = "Negative"
+                } else if (num == 0) {
+                    document.getElementById("signNum").innerText = "Number is Zero"
+                }
+            } else {
+                alert("Invalid input!")
+            }
+        }
+    </script>
+
+    <center>
+        <h1>Check leap Year</h1>
+    </center>
+
+    <form>
+        <input id="year" type="text" placeholder="Enter a year">
+        <button type="button" onclick="checkLeap()">Execute the code</button>
+    </form>
+
+    <p id="leapornot"></p>
+
+    <script>
+        
+        function checkLeap(){
+            let year = document.getElementById("year").value;
+            year = Number(year);
+            console.log(year)
+            //three conditions to find out the leap year
+            if((0 == year % 4) && (0 != year % 100) || (0 == year % 400)){
+                document.getElementById("leapornot").innerText = `${year} is a leap year`;
+            }else{
+                document.getElementById("leapornot").innerText = `${year} is not a leap year`;
+            }
+        }
+        
+    </script>
+
+
+
+
+</body>
+
+</html>

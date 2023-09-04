@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myForm {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            width: 50%;
+            padding: 20px;
+            background-color: cyan;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin: 4px;
+        }
+
+        .form-group input {
+            padding: 12px 14px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Find the given number is palindrome or not</h1>
+    </center>
+
+    <form onsubmit="submitHandler(event)" name="myForm" id="myForm">
+        <div class="form-group">
+            <label for="">Enter a number</label>
+            <input type="text" id="num">
+        </div>
+        <div class="form-group">
+            <input type="submit">
+        </div>
+    </form>
+    <center>
+        <div id="result"></div>
+    </center>
+
+    <script>
+        function submitHandler(e) {
+            e.preventDefault(); //to avoid page refresh
+
+            let num = document.myForm.num.value;
+
+            let reversedNum = num.split('').reverse().join('');
+            console.log(num);
+
+            if (num === reversedNum) {
+                document.getElementById("result").innerText = "Palindrome"
+            } else {
+                document.getElementById("result").innerText = "Not a Palindrome"
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

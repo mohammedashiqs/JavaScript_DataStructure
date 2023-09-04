@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #myForm {
+            border: 4px solid blue;
+            width: 50%;
+            padding: 10px;
+            margin: auto;
+        }
+
+        #myForm .form-group {
+            margin: 8px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <center>
+        <h1>Check whether the triangle is equilateral, scalene or isosceles</h1>
+    </center>
+
+    <form onsubmit="checkTriangle(event)" name="myForm" id="myForm">
+        <div class="form-group">
+            <label for="">Enter side 1</label>
+            <input type="number" id="a" required>
+        </div>
+        <div class="form-group">
+            <label for="">Enter side 2</label>
+            <input type="number" id="b" required>
+        </div>
+        <div class="form-group">
+            <label for="">Enter side 3</label>
+            <input type="number" id="c" required>
+        </div>
+        <div class="form-group">
+            <input type="submit">
+        </div>
+    </form>
+    <center>
+        <div id="result"></div>
+    </center>
+
+    <script>
+        function checkTriangle(e) {
+            e.preventDefault();
+            let a = document.myForm.a.value;
+            let b = document.myForm.b.value;
+            let c = document.myForm.c.value;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            a = Number(a)
+            b = Number(b)
+            c = Number(c)
+
+
+            document.getElementById("result").innerText = "Equilateral Triangle"
+
+            if (a == b && b == c && a == c) {
+
+            } else if (a == b || b == c || a == c) {
+                document.getElementById("result").innerText = "Isosceles Triangle"
+            } else {
+                document.getElementById("result").innerText = "Scalene Triangle"
+            }
+        }
+    </script>
+</body>
+
+</html>

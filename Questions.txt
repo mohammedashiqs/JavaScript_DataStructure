@@ -1,0 +1,12 @@
+    1) Largest of two numbers using JS
+    2) Largest of three numbers using JS - Already done
+    3) Program to find out whether a given year is leap year or not?
+    4) Program to check the sign of a given number.
+
+    5) Find the given number is palindrome or not.
+    6) Program to convert temperature from Fahrenheit to Celsius and Celsius to Fahrenheit.
+    7) Check whether a given number is even or odd
+    8) Check whether the triangle is equilateral, scalene or isosceles
+    9) Program to check whether a character is an alphabet or not
+    10) Program to check vowel or consonants
+    11) Program to check Armstrong or not
